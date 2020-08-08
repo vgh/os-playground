@@ -6,6 +6,10 @@
 # docker-compose ps # To see which containers are running.
 # docker-compose down # To stop all of the containers.
 #   The up and down commands can also take services as arguments.
+#   That means you can start and stop individual containers.
+#   For example:
+#   docker-compose up -d arch
+#   docker compose down arch
 # docker attach  --detach-keys="ctrl-a,x" <name> # To attach to an 
 #   instance by name (from 'docker-compose ps'.  The detach keys 
 #   allow you to detach without having the instance exit.

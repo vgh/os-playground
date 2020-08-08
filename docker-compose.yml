@@ -1,0 +1,131 @@
+---
+
+# Commands
+# docker-compose up -d # To download all the containers
+#   and start them running in the background.
+# docker-compose ps # To see which containers are running.
+# docker-compose down # To stop all of the containers.
+#   The up and down commands can also take services as arguments.
+# docker attach  --detach-keys="ctrl-a,x" <name> # To attach to an 
+#   instance by name (from 'docker-compose ps'.  The detach keys 
+#   allow you to detach without having the instance exit.
+
+# Notes
+# Hosts will be able to talk to each other by hostname inside the 
+#   docker network that's created.
+
+version: "3.7"
+
+services:
+  arch:
+    # Source: https://wiki.archlinux.org/index.php/docker#Arch_Linux
+    image: archlinux/base
+    hostname: arch
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+    
+  centos-6:
+    # Source: https://hub.docker.com/_/centos/ 
+    image: centos:6 
+    hostname: centos-6
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+
+  centos-7:
+    # Source: https://hub.docker.com/_/centos/
+    image: centos:7
+    hostname: centos-7
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+
+  # EOL
+  debian-7: # Wheezy
+    # Source: https://hub.docker.com/_/debian/
+    image: debian:7
+    hostname: debian-7
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+
+  debian-8: # Jessie
+    # Source: https://hub.docker.com/_/debian/
+    image: debian:8
+    hostname: debian-8
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+
+  debian-9: # Slim
+    # Source: https://hub.docker.com/_/debian/
+    image: debian:9
+    hostname: debian-9
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+
+  # EOL
+  fedora-26:
+    # Source: https://hub.docker.com/_/fedora/
+    image: fedora:26
+    hostname: fedora-26
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+    # Workaround for Fedora issue
+    entrypoint: /bin/bash
+
+  fedora-27:
+    # Source: https://hub.docker.com/_/fedora/
+    image: fedora:27
+    hostname: fedora-27
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+    # Workaround for Fedora issue
+    entrypoint: /bin/bash
+
+  fedora-28:
+    # Source: https://hub.docker.com/_/fedora/
+    image: fedora:28
+    hostname: fedora-28
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+    # Workaround for Fedora issue
+    entrypoint: /bin/bash
+
+  ubuntu-1404:
+    # Source: https://hub.docker.com/_/ubuntu/
+    image: ubuntu:14.04
+    hostname: ubuntu-1404
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+ 
+  ubuntu-1604:
+    # Source: https://hub.docker.com/_/ubuntu/
+    image: ubuntu:16.04
+    hostname: ubuntu-1604
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+
+  ubuntu-1804:
+    # Source: https://hub.docker.com/_/ubuntu/
+    image: ubuntu:18.04
+    hostname: ubuntu-1804
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+
+  kali:
+    # Source: https://www.kali.org/news/official-kali-linux-docker-images/
+    image: kalilinux/kali-linux-docker
+    hostname: kali
+    # Run a shell that can be connected to
+    stdin_open: true
+    tty: true
+

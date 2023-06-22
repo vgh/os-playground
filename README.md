@@ -21,5 +21,13 @@ You need to be running a 64 bit operating system in all cases, and you need virt
 
 The origin of all images are available in the comments in the Vangrantfile and docker-compose.yml. Where possible, the image provided by the operating system vendor is used, and where it is not possible, the source is another trusted party. For example, HashiCorp provides both Vagrant and the Ubuntu images used by Vagrant.  Any concerns or updates should be filed as issues or pull requests respectively.
 
+Some notes on limitations of Docker and VirtualBox.  These are a snapshot as of June 21, 2023.
+* Docker will run on Linux, Windows, and Mac - both Intel/AMD CPU and ARM CPU systems.  
+  - Linux containers can run with a different architecture than the underlying hardware. However,
+    64 bit containers cannot be run on 32 bit operating systems.
+  - Windows containers have to run with the same OS and version as the Windows host.  They won't run on non-Windows (Linux, Mac) hosts.
+* Vagrant will run on Linux, Windows, and Mac - both Intel/AMD CPU and ARM CPU systems.   
+  - VirtualBox is the default hypervisor.  It will run almost any OS that will run on an emulated version of the underlying hardware. It won't run Intel/AMD architecture Vagrant boxes on Macs with ARM processors.
+
 
 
